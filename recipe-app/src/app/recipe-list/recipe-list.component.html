@@ -1,0 +1,27 @@
+<div class="wrap">
+  <form (ngSubmit)="getTheFreakingRecipes()">
+  <div class="search">
+    <input type="text" class="form-control" name="searchTerm" [(ngModel)]="searchTerm" placeholder="Search here"
+      autocomplete="off">
+    <button class="recipebtn" type="submit">Search</button>
+  </div>
+</form>
+  <div class="meals">
+      <select [(ngModel)]="healthLabel">
+        <option value="" default>Filter by...</option>
+        <option value="&health=vegetarian">Vegetarian</option>
+        <option value="&health=vegan">Vegan</option>
+        <option value="&health=alcohol-free">Alcohol-Free</option>
+      </select>
+  </div>
+
+  <div class="wrapper">
+    <div class="card" *ngFor="let recipe of recipes">
+      <a routerLink="detail/{{recipe.label}}">
+        <h3 class="cardtitle">{{recipe.label}}</h3>
+        <img src="{{recipe.image}}">
+      </a>
+    </div>
+  </div>
+</div>
+
