@@ -9,11 +9,16 @@ import { Observable } from 'rxjs';
 export class UserandtokenService {
 
   private loginRegister = {
-    login: 'http://recipe-app.test/api/login',
-    register: 'http://recipe-app.test/api/register'
+
+    login: 'https://hellorecipeapp.herokuapp.com/api/login',
+    register: 'https://hellorecipeapp.herokuapp.com/api/signup'
+
+    // login: 'http://recipe-app.test/api/login',
+    // register: 'http://recipe-app.test/api/register'
   }
 
-  baseUrl = 'http://recipe-app.test/api'
+  baseUrl = 'https://hellorecipeapp.herokuapp.com/api'
+  // baseUrl = 'http://recipe-app.test/api'
 
   constructor(
     private http: HttpClient,
